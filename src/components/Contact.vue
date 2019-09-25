@@ -10,7 +10,7 @@
             .column.is-12.headline.margin-top-3
               p CONTACTS
             .column.is-12.margin-top-2
-              a(href='https://apps.colorado.gov/dora/licensing/Lookup/PrintLicenseDetails.aspx?cred=1262357&contact=1364775') Aida's Colorado CPA license
+              a(@click='newWindowRedirect(cpa_license_url)') Aida's Colorado CPA license
             .column.is-12.margin-top-2
               p 1199 S Waco St Unit B
               p Aurora, Co 80017
@@ -18,7 +18,7 @@
             .column.is-12.margin-top-1
               p shaymardanova.aida@gmail.com
             .column.is-12.margin-top-1
-              a(href="tel:970-470-991") 970-470-991   
+              a(href="tel:970-470-991") 970-470-991
             .column.is-12.margin-top-2
           .column.is-1.profile-picture-container.is-mobile
             figure.image.profile-picture
@@ -33,7 +33,19 @@ export default {
       default: 'business.jpg',
       type: String,
     }
-  }
+  },//props
+
+  data() {
+    return {
+      cpa_license_url: 'https://apps.colorado.gov/dora/licensing/Lookup/PrintLicenseDetails.aspx?cred=1262357&contact=1364775'
+    }//return
+  },//data
+
+  methods: {
+    newWindowRedirect(target) {
+      window.open(target, '_blank')
+    }
+  },
 }//default
 </script>
 
@@ -55,7 +67,7 @@ export default {
   }
 
   .profile-picture-container {
-    padding-top: 10%; 
+    padding-top: 10%;
   }
 
   article, .media {
@@ -72,11 +84,7 @@ export default {
     display: none;
   }
 
-  @media (max-device-width: 768px)  { 
-    .profile-picture {
-      // margin-left: 10%; 
-    }
-
+  @media (max-device-width: 768px)  {
     .profile-picture-container {
       padding-left: 15%;
     }
@@ -87,6 +95,14 @@ export default {
 
     .is-mobile {
       display: block;
+    }
+
+    .media {
+      height: 55rem;
+    }
+
+    .media-content {
+      height: 100%;
     }
   }
 </style>

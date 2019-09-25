@@ -7,33 +7,33 @@
     .columns.is-centered
       .column.is-5.has-text-centered.margin-top-5
         strong.services SERVICES
-        
+
     .columns.is-centered.margin-top-4
       .column.is-10
         InfoBlock(img_name="handshake.jpg")
-          .columns.margin-top-3.is-multiline.is-centered
+          .columns.margin-top-2.is-multiline.is-centered
             .column.is-9.service-headline
               p.has-text-left CORPORATE FORMATION - LLC/S CORP
             .column.is-9.services-body.margin-top-1
-              p.has-text-justified.text-bg
-                | Consultation on the available 
+              p.has-text-justified
+                | Consultation on the available
                 | options of business types and identifying one that
                 | fits best for you. Forming corporate documents, obtaining
                 | Fed Tax ID, Colorado Filing.
-              
-              p.text-bg $200
+
+              p $200
 
     .columns.is-centered.margin-top-3
       .column.is-10
         InfoBlock(img_name="virt_accounting.jpg")
-          .columns.margin-top-3.is-multiline.is-centered
+          .columns.margin-top-2.is-multiline.is-centered
             .column.is-9.service-headline
               p.has-text-left VIRTUAL ACCOUNTING/BOOKKEEPING
             .column.is-9.services-body.margin-top-1
               p.has-text-justified
                 | Producing monthly financial records and generating
-                | statements about financial position and results 
-                | of operations of the company in accordance with 
+                | statements about financial position and results
+                | of operations of the company in accordance with
                 | General Accepted Accounting Principles (US GAAP).
 
               p $200 / month
@@ -42,9 +42,9 @@
     .columns.is-centered.margin-top-3
       .column.is-10
         InfoBlock(img_name="business.jpg")
-          .columns.margin-top-1.is-multiline.is-centered
+          .columns.margin-top-2.is-multiline.is-centered
             .column.is-9.service-headline
-              p.has-text-left TAX PLANNING AND ERTURN PREPARATION
+              p.has-text-left TAX PLANNING AND RETURN PREPARATION
             .column.is-9.services-body.margin-top-1
               p.has-text-justified
                 | Estimated tax calculation and EFT account set up.
@@ -65,13 +65,13 @@
     .columns.is-centered.margin-top-3
       .column.is-10
         InfoBlock(img_name="coins.jpg")
-          .columns.margin-top-3.is-multiline.is-centered
+          .columns.margin-top-2.is-multiline.is-centered
             .column.is-9.service-headline
               p.has-text-left ACCOUNTING PACKAGE
             .column.is-9.services-body.margin-top-1
               p.has-text-justified
-                | Monthly package includes bookkeeping, quarterly 
-                | financial statements generation, estimated taxes 
+                | Monthly package includes bookkeeping, quarterly
+                | financial statements generation, estimated taxes
                 | calculation, payroll tax calculation, with
                 | <b>free tax return at the end of the year.</b>
 
@@ -124,32 +124,44 @@ export default {
 
   .services {
     font-size: 1.5em;
-    color: $headline-color;
+    color: #00c9c9;
     letter-spacing: 2px;
   }
 
   .service-headline {
     font-size: 1.4em;
     color: $headline-color;
+    text-shadow: 0px 1px 1px black;
+    padding-left: 1.5rem;
   }
 
   .services-body {
     font-size: 1.15em;
     letter-spacing: 1px;
+    z-index: 5;
+    overflow: hidden;
   }
 
-  .text-bg {
-    // background: gray;
+  .services-body > p {
+    padding: 0.5rem 2.5rem 0.5rem 2rem;
   }
 
-  @media (min-width:320px)  { 
+
+  @media (max-device-width: 768px)  {
     .service-headline {
-      text-shadow: 0px 0px 1px rgb(0, 0, 0);
+      background-color:rgba(46, 46, 46, 0.6);
+      text-shadow: 2px 2px 3px black;
+      color: white;
+      font-weight: bold;
     }
 
     .services-body {
+      background-color:rgba(46, 46, 46, 0.6);
       color: white;
-      text-shadow: 0px 0px 10px rgb(0, 0, 0);
+      text-shadow: 1px 1px 2px black;
+      z-index: 5;
+      padding: 0rem;
     }
+
   }
 </style>
