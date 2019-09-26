@@ -45,10 +45,10 @@ module.exports = {
 
   build: {
     // Template for index.html
-    index: path.resolve(__dirname, '../../../firebase/gamehound/public/index.html'),
+    index: path.resolve(__dirname, '../byproduct/public/index.html'),
 
     // Paths
-    assetsRoot: path.resolve(__dirname, '../../../firebase/gamehound/public/'),
+    assetsRoot: path.resolve(__dirname, '../byproduct/public/'),
     assetsSubDirectory: 'static',
     assetsPublicPath: './',
 
